@@ -40,8 +40,7 @@ public class Timesheet {
     }
 
 
-    public Timesheet(long id, long userID, Date timesheetdate, double duration, String location, long taskID, String description, Date createDate, String createUser) {
-        this.id = id;
+    public Timesheet(long userID, Date timesheetdate, double duration, String location, long taskID, String description, Date createDate, String createUser) {
         this.userID = userID;
         this.timesheetdate = timesheetdate;
         this.duration = duration;
@@ -50,10 +49,6 @@ public class Timesheet {
         this.description = description;
         this.createDate = createDate;
         this.createUser = createUser;
-    }
-
-    public Timesheet(long userID, Date timesheetdate, double duration, String location, long taskID, String description, Date createDate, String createUser) {
-
     }
 
     public long getId() {
