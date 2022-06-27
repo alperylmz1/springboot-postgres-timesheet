@@ -8,12 +8,17 @@ import java.util.List;
 
 public interface TimesheetRepository extends JpaRepository<Timesheet , Long> {
     List<Timesheet> findAll();
-
+    
+    /*
     @Query("from Timesheet where CAST(userID as text) like CONCAT(:userID, '%')")
     List<Timesheet> findByUserIdStartsWith(String userID);
-
+    */
+    
     /*
     @Query("from Timesheet where userID = : userID")
     List<Timesheet> findByUserId(long userID);
     */
+    
+    @Query("select p from Timesheet p where p.userID =?1")
+    List<Timesheet> findAllByUserId(Long userId);
 }
