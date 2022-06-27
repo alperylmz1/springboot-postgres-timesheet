@@ -62,9 +62,9 @@ public class TimesheetController {
     }
     */
     @GetMapping("/timesheets/user/{userID}")
-    public ResponseEntity<List<Timesheet>> findByUserId(@PathVariable("userID") String userID){
+    public ResponseEntity<List<Timesheet>> findByUserId(@PathVariable("userID") Long userID){
         try{
-            List<Timesheet> timesheets = timesheetRepository.findByUserIdStartsWith(userID);
+            List<Timesheet> timesheets = timesheetRepository.findAllByUserId(userID);
 
             if(timesheets.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
