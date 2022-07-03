@@ -102,7 +102,7 @@ public class TimesheetController {
         Optional<Timesheet> timesheetData = timesheetRepository.findById(id);
         if(timesheetData.isPresent()){
             Timesheet _timesheet = timesheetData.get();
-            _timesheet.setTaskID(timesheet.getUserID());
+            _timesheet.setUserID(timesheet.getUserID());
             _timesheet.setTimesheetdate(timesheet.getTimesheetdate());
             _timesheet.setDuration(timesheet.getDuration());
             _timesheet.setLocation(timesheet.getLocation());
